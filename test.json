@@ -1,0 +1,51 @@
+{
+    "version": 1,
+    "tests": [
+        {
+            "name": "Options",
+            "tests": [
+                {
+                    "name": "Affichage aide",
+                    "args": ["-h"],
+                    "stdout": [
+                        { "regex": "Usage: ./number \\[options\\]" }
+                    ],
+                    "exit": 0
+                },
+                {
+                    "name": "Affichage version",
+                    "args": ["--version"],
+                    "stdout": [
+                        { "regex": "(?i)version" }
+                    ],
+                    "exit": 0
+                },
+                {
+                    "name": "Affichage aide + version",
+                    "args": ["-h", "--version"],
+                    "stdout": [
+                        { "regex": "Usage: ./number \\[options\\]" },
+                        { "regex": "(?i)version" }
+                    ],
+                    "exit": 0
+                }
+            ]
+        },
+        {
+            "name": "Jeu 1",
+            "tests": [
+                {
+                    "name": "Trouver le nombre fixe",
+                    "args": ["-o1", "-n500"],
+                    "stdin": "400\n500\n",
+                    "stdout": [
+                        { "regex": "petit" },
+                        { "regex": "gagne" },
+                        { "regex": "2" }
+                    ],
+                    "exit": 0
+                }
+            ]
+        }
+    ]
+}
