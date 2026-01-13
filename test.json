@@ -40,7 +40,7 @@
                     "stdin": "400\n500\n",
                     "stdout": [
                         { "regex": "petit" },
-                        { "regex": "gagne" },
+                        { "regex": "gagné" },
                         { "regex": "2" }
                     ],
                     "exit": 0
